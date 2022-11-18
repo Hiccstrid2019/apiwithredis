@@ -1,7 +1,10 @@
-﻿namespace WebApiWithRedis.Services
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace WebApiWithRedis.Services
 {
     public interface IOmdbService
     {
-        MovieInfo SearchByName(string nameMovie);
+        Task<ICollection<MovieInfo>> SearchByName(string nameMovie);
     }
 }

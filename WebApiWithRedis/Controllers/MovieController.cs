@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebApiWithRedis.Services;
@@ -17,9 +18,9 @@ namespace WebApiWithRedis.Controllers
         }
         
         [HttpGet("search")]
-        public MovieInfo Search([FromQuery] string nameMovie)
+        public async Task<ICollection<MovieInfo>> Search([FromQuery] string name)
         {
-            var result = _omdbService.SearchByName(nameMovie);
+            var result = await _omdbService.SearchByName(name);
             return result;
         }
     }
