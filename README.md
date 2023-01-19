@@ -1,7 +1,5 @@
 ### Simple Asp.net Core Web API with Redis
 
-Endopint: /movie/search
+Run: docker-compose up
 
-Query url param: name
-
-Returns a list of movies with the name in which the passed parameter name 
+Swagger is available on port 9901
