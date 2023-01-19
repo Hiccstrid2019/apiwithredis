@@ -1,0 +1,12 @@
+version: '1'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: WebApiWithRedis/Dockerfile
+    ports:
+      - "9901:80"
+      - "8080:443"
+  redis:
+    image: redis
